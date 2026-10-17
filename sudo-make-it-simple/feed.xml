@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
   <title>sudo make it simple</title>
-  <subtitle>Blog von Marie Christin Eilers über Product Management und KI: Entscheidungen, Werkzeuge, Skills und Plugins.</subtitle>
+  <subtitle>Blog von Marie Christin Eilers über Product Management und KI – weniger Roadmap-Theater, mehr Wirkung. Mit Skills für Claude, die nicht alles abnicken.</subtitle>
   <link href="https://marieeilers.github.io/sudo-make-it-simple/feed.xml" rel="self"/>
   <link href="https://marieeilers.github.io/sudo-make-it-simple/"/>
   <id>https://marieeilers.github.io/sudo-make-it-simple/</id>
