@@ -438,3 +438,10 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 
 /* Rahmenlinien ohne Lücke: Außenabstand des ersten Elements nicht aus .wrap herausfallen lassen */
 .wrap { display: flow-root; }
+
+/* ---- Sprachumschalter im Meta-Band ---- */
+.meta-rechts { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+.sprachen { padding-left: 12px; border-left: 1px solid var(--line); }
+.sprachen b { color: var(--ink); font-weight: 700; }
+.sprachen a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.sprachen a:hover { color: var(--ink); }

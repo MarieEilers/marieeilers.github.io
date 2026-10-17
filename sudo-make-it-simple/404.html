@@ -5,17 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Seite nicht gefunden · sudo make it simple</title>
 <meta name="description" content="Blog von Marie Christin Eilers über Product Management und KI – weniger Roadmap-Theater, mehr Wirkung. Mit Skills für Claude, die nicht alles abnicken.">
-<link rel="stylesheet" href="/sudo-make-it-simple/assets/style.css?v=mvcfmztm">
+<link rel="stylesheet" href="/sudo-make-it-simple/assets/style.css?v=mvcg57ts">
 <link rel="alternate" type="application/atom+xml" title="sudo make it simple" href="/sudo-make-it-simple/feed.xml">
 <meta name="google-site-verification" content="i6QCyJ3cnZQkEDbQEgjYpYasFZPo95wLYsHOFtb3fIc">
-<script data-goatcounter="https://sudo-make-it-simple.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://sudo-make-it-simple.goatcounter.com/count" async src="/sudo-make-it-simple/assets/count.js?v=mvcg57ts"></script>
 <script>document.documentElement.classList.add('js');</script>
-<script defer src="/sudo-make-it-simple/assets/reveal.js?v=mvcfmztm"></script>
-<script defer src="/sudo-make-it-simple/assets/replay.js?v=mvcfmztm"></script>
+<script defer src="/sudo-make-it-simple/assets/reveal.js?v=mvcg57ts"></script>
+<script defer src="/sudo-make-it-simple/assets/replay.js?v=mvcg57ts"></script>
 </head>
 <body>
 
-<div class="meta"><span>// sudo make it simple</span><span>Product Management × KI · V0.1</span></div>
+<div class="meta">
+  <span>// sudo make it simple</span>
+  <span class="meta-rechts">Product Management × KI · V0.1
+  </span>
+</div>
 <nav class="topnav">
   <a class="brand" href="/sudo-make-it-simple/">sudo make it simple</a>
   <div class="navlinks">
@@ -29,7 +33,7 @@
 <div class="head">
   <p class="eyebrow">Fehler 404</p>
   <h1 class="hero-h1 has-mark">404: Seite <span class="mark">not found.<svg class="faden" viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4,16 C72,6 150,20 224,11 C258,6 282,16 298,9"/></svg></span></h1>
-  <p class="lede">Die Seite gibt es nicht – oder nicht mehr. Manchmal reicht ein Punkt zu viel in der Adresse.</p>
+  <p class="lede">Die Seite gibt es nicht – oder nicht mehr. Manchmal reicht ein Punkt zu viel in der Adresse.<br><span lang="en">This page doesn’t exist – or not anymore. <a href="/sudo-make-it-simple/en/">English version</a>.</span></p>
 </div>
 
 <h2>Weiter</h2>
@@ -46,5 +50,12 @@
   <span class="fuss-links"><a href="/sudo-make-it-simple/impressum/">Impressum</a><a href="/sudo-make-it-simple/datenschutz/">Datenschutz</a></span>
 </footer>
 
+<script>
+/* Wer über DE/EN umschaltet, behält diese Sprache. */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("[data-sprache]");
+  if (a) { try { localStorage.setItem("sprache", a.getAttribute("data-sprache")); } catch (err) {} }
+});
+</script>
 </body>
 </html>

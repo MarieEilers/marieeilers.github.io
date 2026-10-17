@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Posts · sudo make it simple</title>
+<meta name="description" content="Blog by Marie Christin Eilers on product management and AI – less roadmap theatre, more impact. With Claude skills that don&#39;t nod along.">
+<link rel="alternate" hreflang="en" href="https://marieeilers.github.io/sudo-make-it-simple/en/beitraege/">
+<link rel="alternate" hreflang="de" href="https://marieeilers.github.io/sudo-make-it-simple/beitraege/">
+<script>
+/* Sprache automatisch: Browser auf Deutsch → Deutsch, sonst Englisch. Eine eigene Wahl über DE/EN hat Vorrang. Suchmaschinen werden nicht umgeleitet. */
+(function () {
+  try {
+    if (/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)) return;
+    var wahl = localStorage.getItem("sprache");
+    var browser = ((navigator.languages && navigator.languages[0]) || navigator.language || "de").toLowerCase().indexOf("de") === 0 ? "de" : "en";
+    if ((wahl || browser) !== "en") location.replace("/sudo-make-it-simple/beitraege/");
+  } catch (e) {}
+})();
+</script>
+<link rel="stylesheet" href="/sudo-make-it-simple/assets/style.css?v=mvcg57ts">
+<link rel="alternate" type="application/atom+xml" title="sudo make it simple" href="/sudo-make-it-simple/en/feed.xml">
+<meta name="google-site-verification" content="i6QCyJ3cnZQkEDbQEgjYpYasFZPo95wLYsHOFtb3fIc">
+<script data-goatcounter="https://sudo-make-it-simple.goatcounter.com/count" async src="/sudo-make-it-simple/assets/count.js?v=mvcg57ts"></script>
+<script>document.documentElement.classList.add('js');</script>
+<script defer src="/sudo-make-it-simple/assets/reveal.js?v=mvcg57ts"></script>
+<script defer src="/sudo-make-it-simple/assets/replay.js?v=mvcg57ts"></script>
+</head>
+<body>
+
+<div class="meta">
+  <span>// sudo make it simple</span>
+  <span class="meta-rechts">Product management × AI · V0.1
+    <span class="sprachen"><a href="/sudo-make-it-simple/beitraege/" hreflang="de" lang="de" data-sprache="de">DE</a> / <b>EN</b></span>
+  </span>
+</div>
+<nav class="topnav">
+  <a class="brand" href="/sudo-make-it-simple/en/">sudo make it simple</a>
+  <div class="navlinks">
+    <a href="/sudo-make-it-simple/en/">Home</a>
+    <a href="/sudo-make-it-simple/en/beitraege/" class="active">Posts</a>
+    <a href="/sudo-make-it-simple/en/ueber-mich/">About</a>
+  </div>
+</nav>
+
+<main class="wrap">
+<div class="head">
+  <p class="eyebrow">All posts</p>
+  <h1>Posts</h1>
+</div>
+
+
+
+<ol class="karten">
+  <li>
+    <a class="karte" href="/sudo-make-it-simple/en/beitraege/product-coach/">
+      <span class="auf-meta">17/10/2026 · Skill</span>
+      <span class="k-titel">404: Sparring partner not found</span>
+      <span class="k-anriss">So get one: a Claude skill for permanent coaching. Pushback instead of a pat on the back – installed in a few clicks.</span>
+      <span class="auf-cta">Read →</span>
+    </a>
+  </li>
+</ol>
+
+
+</main>
+
+<footer class="fuss">
+  <span>// Marie Christin Eilers</span>
+  <span class="fuss-links"><a href="https://marie-christin-eilers.carrd.co/">Website</a><a href="https://www.linkedin.com/in/marieeilers/">LinkedIn</a><a href="https://www.xing.com/profile/MarieChristin_Eilers">XING</a><a href="https://github.com/MarieEilers">GitHub</a></span>
+  <span class="fuss-links"><a href="/sudo-make-it-simple/en/impressum/">Legal notice</a><a href="/sudo-make-it-simple/en/datenschutz/">Privacy</a></span>
+</footer>
+
+<script>
+/* Wer über DE/EN umschaltet, behält diese Sprache. */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("[data-sprache]");
+  if (a) { try { localStorage.setItem("sprache", a.getAttribute("data-sprache")); } catch (err) {} }
+});
+</script>
+</body>
+</html>

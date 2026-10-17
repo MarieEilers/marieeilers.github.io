@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>sudo make it simple</title>
+  <subtitle>Blog by Marie Christin Eilers on product management and AI – less roadmap theatre, more impact. With Claude skills that don&#39;t nod along.</subtitle>
+  <link href="https://marieeilers.github.io/sudo-make-it-simple/en/feed.xml" rel="self"/>
+  <link href="https://marieeilers.github.io/sudo-make-it-simple/en/"/>
+  <id>https://marieeilers.github.io/sudo-make-it-simple/en/</id>
+  <updated>2026-10-17T00:00:00.000Z</updated>
+  <author><name>sudo make it simple</name></author>
+  <entry>
+    <title>404: Sparring partner not found</title>
+    <link href="https://marieeilers.github.io/sudo-make-it-simple/en/beitraege/product-coach/"/>
+    <id>https://marieeilers.github.io/sudo-make-it-simple/en/beitraege/product-coach/</id>
+    <updated>2026-10-17T00:00:00.000Z</updated>
+    <summary>So get one: a Claude skill for permanent coaching. Pushback instead of a pat on the back – installed in a few clicks.</summary>
+  </entry>
+</feed>
