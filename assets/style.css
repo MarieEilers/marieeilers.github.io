@@ -1,0 +1,381 @@
+/* Feldnotizen — Look „Motion-Kante“, übernommen aus dem Leitfaden für Product Owner.
+   Ein einziges Stylesheet für alle Seiten. Monochrom + ein roter Signatur-Faden.
+   Blog-Ergänzungen stehen am Ende unter „Blog“. */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --bg:      #FFFFFF;   /* Seitenfläche */
+  --ink:     #100F0D;   /* Text, Überschriften */
+  --muted:   #7A7A72;   /* Meta, Beschreibungen, Labels */
+  --line:    #E4E4DE;   /* Grid-Hairlines, Trenner */
+  --line2:   #F4F4F0;   /* Hover-Fläche */
+  --accent:  #141310;   /* Struktur-Akzent: Nummern, aktive Nav — monochrom */
+  --accent-deep: #000000;
+  --accent-soft: #F3F3EF; /* helle Füllung (Callout, Hinweis) */
+  --faden:   #E5342B;   /* rot — nur die Signatur-Linie */
+
+  --display: 'Space Grotesk', system-ui, sans-serif;
+  --body:    'Inter', system-ui, sans-serif;
+  --mono:    'Space Mono', ui-monospace, monospace;
+  --maxw: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body);
+  font-size: 16.5px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+
+/* ---- Grid-Rails: durchgehende Seitenlinien (Rahmen) ---- */
+.topnav, .wrap {
+  max-width: var(--maxw); margin: 0 auto;
+  border-left: 1px solid var(--line); border-right: 1px solid var(--line);
+}
+.wrap { padding: 0 26px 96px; }
+
+a { color: var(--accent); text-decoration: none; }
+p a, .lede a, .qv a, ul.plain a, .beleg-line a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; text-decoration-color: #C9C9C2; }
+p a:hover, .lede a:hover, .qv a:hover, .beleg-line a:hover { text-decoration-color: var(--ink); }
+
+/* ---- Meta-Band über der Navigation ---- */
+.meta {
+  max-width: var(--maxw); margin: 0 auto;
+  display: flex; justify-content: space-between; gap: 16px;
+  padding: 12px 26px;
+  font-family: var(--mono); font-size: 11px;
+  text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+  border: 1px solid var(--line); border-bottom: 0; /* Rails links/rechts + Oberkante; Trennlinie liefert .topnav */
+}
+
+/* ---- Kopf: Titelzeile + Navigationszeile ---- */
+.topnav {
+  padding: 18px 26px 14px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.topnav .brand { font-family: var(--display); color: var(--ink); font-weight: 700; font-size: 15.5px; letter-spacing: -.01em; }
+.topnav .brand:hover { color: var(--accent); }
+.navlinks { display: flex; flex-wrap: wrap; gap: 5px 20px; font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; }
+.navlinks a { color: var(--muted); }
+.navlinks a:hover { color: var(--accent); }
+.navlinks a.active { color: var(--ink); }
+
+/* ---- Kopfbereich einer Seite ---- */
+.head { padding: 50px 0 10px; }
+.eyebrow {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted); font-weight: 400; margin: 0 0 18px;
+}
+.eyebrow::before { content: "// "; }
+h1 {
+  font-family: var(--display); font-size: 40px; line-height: 1.08;
+  letter-spacing: -.025em; margin: 0 0 18px; font-weight: 700;
+}
+.hero-h1 { font-size: 52px; line-height: 1.3; }
+@media (max-width: 560px) { .hero-h1 { font-size: 34px; line-height: 1.24; } }
+.lede { font-size: 18px; color: var(--muted); margin: 0 0 4px; max-width: 58ch; animation: fadeup .7s ease .1s both; }
+@keyframes fadeup { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* ---- Hero-Faden (Startseite) ---- */
+.mark { position: relative; white-space: nowrap; }
+h1.has-mark { line-height: 1.28; } /* Luft für den Faden-Schwung, falls der Titel umbricht */
+.mark .faden { position: absolute; left: -4px; top: 100%; margin-top: -14px; width: calc(100% + 14px); height: 22px; overflow: visible; }
+.faden path { fill: none; stroke: var(--faden); stroke-width: 4.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.2s cubic-bezier(.5,0,.2,1) forwards .5s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+/* ---- Fließtext ---- */
+p { margin: 0 0 16px; max-width: 64ch; }
+.section { padding-top: 30px; }
+
+h2 {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--muted); font-weight: 700;
+  margin: 46px 0 6px; padding-top: 26px; border-top: 1px solid var(--line);
+}
+h2::before { content: "// "; color: var(--muted); }
+
+/* ---- Prinzip-Einträge (Faktoren / K) ---- */
+.item { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.item:last-child { border-bottom: 0; }
+.item h3 { font-family: var(--display); font-size: 20px; margin: 0 0 10px; font-weight: 600; display: flex; gap: 14px; align-items: baseline; }
+.item h3 .num { font-family: var(--mono); color: var(--accent); font-weight: 700; flex: none; min-width: 1.6em; font-size: 15px; }
+.indent { padding-left: calc(1.6em + 14px); }
+.szene { color: var(--muted); margin: 0 0 6px; padding-left: calc(1.6em + 14px); }
+.szene::before { content: "Szene — "; font-weight: 600; }
+.prinzip { margin: 0; padding-left: calc(1.6em + 14px); }
+.prinzip::before { content: "Prinzip — "; font-weight: 700; }
+.praxis { color: var(--ink); margin: 8px 0 0; padding-left: calc(1.6em + 14px); font-size: 15.5px; }
+.praxis::before { content: "Praxis — "; font-weight: 700; color: var(--muted); }
+.beleg { color: var(--muted); margin: 6px 0 0; padding-left: calc(1.6em + 14px); font-size: 13.5px; }
+.beleg::before { content: "Beleg: "; }
+.hinweis { margin: 10px 0 0 calc(1.6em + 14px); padding: 13px 16px; background: var(--accent-soft); border-left: 2px solid var(--ink); font-size: 15px; color: var(--ink); }
+
+/* ---- Detailseite ---- */
+.szene-lead { color: var(--muted); margin: 0 0 20px; font-size: 16.5px; }
+.szene-lead strong { color: var(--ink); font-weight: 700; }
+.prinzip-callout { margin: 4px 0 22px; padding: 15px 18px; border-left: 3px solid var(--ink); background: var(--accent-soft); font-size: 17px; }
+.prinzip-callout strong { color: var(--accent-deep); }
+.praxis-lead { margin: 22px 0 6px; }
+.praxis-lead strong { color: var(--accent-deep); }
+.beleg-line { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 4px 0 0; line-height: 1.7; }
+
+/* ---- Methoden-Detailseite: Was / Wozu / Wie ---- */
+.qa { display: grid; grid-template-columns: 104px 1fr; gap: 4px 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.qa:last-of-type { border-bottom: 0; }
+.qa .ql { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); font-weight: 700; padding-top: 3px; }
+.qa .qv { margin: 0; }
+@media (max-width: 560px) { .qa { grid-template-columns: 1fr; gap: 2px; } }
+
+/* ---- Phasen (Prozess-Seite) ---- */
+.phase { padding: 20px 0; border-bottom: 1px solid var(--line); }
+.phase:last-of-type { border-bottom: 0; }
+.phase h3 { font-family: var(--display); font-size: 20px; margin: 0 0 12px; font-weight: 600; display: flex; gap: 14px; align-items: baseline; }
+.phase h3 .num { font-family: var(--mono); color: var(--accent); font-weight: 700; flex: none; min-width: 1.6em; font-size: 15px; }
+.facets { margin: 0; padding-left: calc(1.6em + 14px); }
+.facets > div { display: grid; grid-template-columns: 104px 1fr; gap: 4px 14px; padding: 3px 0; }
+.facets .fl { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 700; padding-top: 4px; }
+.facets .fv { margin: 0; }
+.facets .fv.res { color: var(--ink); font-weight: 600; }
+
+/* ---- Übersichtslisten ---- */
+.parts { list-style: none; margin: 8px 0 0; padding: 0; }
+.parts li { padding: 15px 0; border-bottom: 1px solid var(--line); }
+.parts .pt-num { font-family: var(--mono); color: var(--accent); font-weight: 700; margin-right: 12px; font-size: 14px; }
+.parts .pt-title { font-family: var(--display); font-weight: 500; font-size: 18px; }
+.parts .pt-title a { color: var(--ink); }
+.parts .pt-title a:hover { color: var(--accent); }
+.parts .pt-desc { color: var(--muted); display: block; margin-top: 3px; font-size: 14.5px; }
+
+/* ---- Diagramme ---- */
+figure { margin: 28px 0 8px; }
+figure svg { max-width: 100%; height: auto; display: block; }
+figcaption { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-top: 10px; line-height: 1.6; }
+
+/* ---- Tabelle ---- */
+.tablewrap { overflow-x: auto; margin: 14px 0 8px; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); }
+th { font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+td:first-child { font-family: var(--display); font-weight: 500; padding-right: 20px; width: 24%; }
+
+/* ---- Aufzählungen ---- */
+ul.plain { margin: 8px 0 0; padding-left: 20px; }
+ul.plain li { margin: 6px 0; }
+
+/* ---- Fußnavigation ---- */
+.pager { display: flex; justify-content: space-between; margin-top: 50px; padding-top: 18px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.pager a { color: var(--accent); }
+.pager a:hover { color: var(--faden); }
+.pager .spacer { color: transparent; }
+
+/* ---- Scroll-Reveal (reveal.js) — greift nur, wenn JS läuft (html.js) ---- */
+html.js .reveal { opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; }
+html.js .reveal.is-visible { opacity: 1; transform: none; }
+
+@media print {
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---- Bewegung abschalten bei Bedarf ---- */
+@media (prefers-reduced-motion: reduce) {
+  .faden path, .lede { animation: none !important; }
+  .faden path { stroke-dashoffset: 0; }
+  html.js .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---- Responsiv ---- */
+@media (max-width: 560px) {
+  html, body { font-size: 16px; }
+  h1 { font-size: 30px; }
+  .facets > div { grid-template-columns: 1fr; gap: 0; padding: 6px 0; }
+  .facets .fl { padding-top: 0; }
+  td:first-child { width: auto; }
+}
+
+
+/* ================= Blog ================= */
+
+/* ---- Abschnitts-Label „// Warum“ (Beiträge, Über mich) ---- */
+.abschnitt {
+  font-family: var(--mono); font-size: 11.5px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--muted); font-weight: 700;
+  margin: 34px 0 10px; padding-top: 22px; border-top: 1px solid var(--line); max-width: none;
+}
+.abschnitt::before { content: "// "; }
+
+/* ---- Beitragstext: Überschriften sind Aussagen, nicht Labels ---- */
+.beitrag h2 {
+  font-family: var(--display); font-size: 24px; line-height: 1.25; letter-spacing: -.015em;
+  text-transform: none; color: var(--ink); font-weight: 600;
+  margin: 46px 0 12px; padding-top: 24px; border-top: 1px solid var(--line);
+}
+.beitrag h2::before { content: none; }
+.beitrag ul { margin: 0 0 16px; padding-left: 20px; max-width: 64ch; }
+.beitrag li { margin: 6px 0; }
+.beitrag a, ul.plain a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; text-decoration-color: #C9C9C2; }
+.beitrag a:hover, ul.plain a:hover { text-decoration-color: var(--ink); }
+.beitrag code { font-family: var(--mono); font-size: .86em; background: var(--accent-soft); padding: 1px 5px; }
+.beitrag pre {
+  margin: 4px 0 18px; padding: 14px 18px; overflow-x: auto;
+  background: #10201A; color: #E9E4D4; border: 1px solid #24402F; border-radius: 10px;
+  font-family: var(--mono); font-size: 13px; line-height: 1.8;
+}
+.beitrag pre code { background: none; padding: 0; font-size: inherit; }
+
+/* ---- Beispiel-Dialoge als Terminalfenster (Akzent wie im GitHub-Profil) ---- */
+.dialog {
+  margin: 26px 0 18px; padding: 0 0 6px; overflow: hidden;
+  background: #10201A; color: #E9E4D4; border: 1px solid #24402F; border-radius: 10px;
+  font-family: var(--mono);
+}
+.dialog .dialog-kopf {
+  position: relative; display: block; margin: 0 0 14px; padding: 9px 14px 9px 70px; max-width: none;
+  background: #182C22; color: #8EA394;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+}
+.dialog .dialog-kopf::before {
+  content: ""; position: absolute; left: 14px; top: 50%; width: 10px; height: 10px; border-radius: 50%;
+  background: #E5645B; box-shadow: 16px 0 #E7C37E, 32px 0 #7FB685; transform: translateY(-50%);
+}
+.dialog p { display: grid; grid-template-columns: 5.4em 1fr; gap: 10px; margin: 0 0 12px; padding: 0 18px; max-width: none; font-size: 13.5px; line-height: 1.65; }
+.dialog .wer { color: #8FC79A; white-space: nowrap; }
+.dialog .wer.coach { color: #E7C37E; }
+@media (max-width: 560px) { .dialog p { grid-template-columns: 1fr; gap: 0; } }
+
+/* ---- Einstiegssätze je Modus ---- */
+.modi { display: grid; grid-template-columns: 1fr 1fr; margin: 6px 0 18px; border-top: 1px solid var(--ink); }
+.modus { display: flex; flex-direction: column; gap: 4px; padding: 14px 16px 16px 0; border-bottom: 1px solid var(--line); }
+.modus:nth-child(even) { padding-left: 16px; border-left: 1px solid var(--line); }
+.modus .nr { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.modus .name { font-family: var(--display); font-weight: 700; font-size: 18px; }
+.modus .satz { font-family: var(--mono); font-size: 12.5px; color: var(--ink); }
+@media (max-width: 560px) { .modi { grid-template-columns: 1fr; } .modus:nth-child(even) { padding-left: 0; border-left: 0; } }
+
+/* ---- Aufmacher-Grafik im Beitrag ---- */
+.hero-bild { margin: 6px 0 30px; }
+.hero-bild figcaption { font-size: 12px; color: var(--ink); }
+
+/* ---- Werte (Über mich) ---- */
+.werte { list-style: none; margin: 8px 0 0; padding: 0; counter-reset: wert; }
+.werte li { position: relative; padding: 16px 0 16px 3.2em; border-bottom: 1px solid var(--line); max-width: none; }
+.werte li::before { counter-increment: wert; content: "0" counter(wert); position: absolute; left: 0; top: 18px; font-family: var(--mono); font-size: 13px; font-weight: 700; }
+.werte b { font-family: var(--display); font-size: 19px; display: block; margin-bottom: 2px; }
+
+/* ---- Beitragsliste ---- */
+.liste { list-style: none; margin: 8px 0 0; padding: 0; }
+.liste li { display: grid; grid-template-columns: 6.6em 7.2em 1fr; gap: 4px 14px; align-items: baseline; padding: 15px 0; border-bottom: 1px solid var(--line); }
+.liste .dt, .liste .rb { font-family: var(--mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+.liste .tt a { font-family: var(--display); font-weight: 500; font-size: 18px; color: var(--ink); }
+.liste .tt a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 560px) { .liste li { grid-template-columns: auto 1fr; } .liste .tt { grid-column: 1 / -1; } }
+.leer { color: var(--muted); }
+
+/* ---- Entwurf-Markierung (nur lokale Vorschau) ---- */
+.entwurf {
+  display: inline-block; margin-left: 6px; padding: 0 6px; vertical-align: 2px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); border: 1px solid var(--ink);
+}
+.eyebrow .entwurf { margin-left: 0; vertical-align: 0; }
+
+/* ---- Fußzeile ---- */
+.fuss {
+  max-width: var(--maxw); margin: 0 auto 48px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px;
+  padding: 14px 26px;
+  border: 1px solid var(--line);
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+}
+.fuss-links { display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.fuss a { color: var(--muted); }
+.fuss a:hover { color: var(--ink); }
+.werte-gruppe { font-family: var(--mono); font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); margin: 22px 0 0; }
+.werte-gruppe::before { content: "// "; }
+
+/* ---- Terminal-Replay (replay.js): echte Sitzungen, Zeile für Zeile ---- */
+.replay {
+  position: relative; margin: 22px 0 22px; overflow: hidden;
+  background: #10201A; color: #E9E4D4; border: 1px solid #24402F; border-radius: 10px;
+  font-family: var(--mono); font-size: 13.5px; line-height: 1.7;
+}
+.replay .r-kopf {
+  position: relative; display: flex; justify-content: space-between; gap: 12px;
+  padding: 9px 14px 9px 70px; background: #182C22; color: #8EA394;
+  font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase;
+}
+.replay .r-kopf::before {
+  content: ""; position: absolute; left: 14px; top: 50%; width: 10px; height: 10px; border-radius: 50%;
+  background: #E5645B; box-shadow: 16px 0 #E7C37E, 32px 0 #7FB685; transform: translateY(-50%);
+}
+.replay .r-inhalt { padding: 14px 18px 40px; }
+.replay .r-zeile { margin: 0 0 10px; white-space: pre-wrap; }
+.replay .r-cmd::before { content: "$ "; color: #8FC79A; }
+.replay .r-sys { color: #8FC79A; }
+.replay .r-du { margin-top: 16px; padding: 8px 12px; background: #1B3328; border-left: 2px solid #8FC79A; color: #F3EFE2; }
+.replay .r-du::before { content: "› "; color: #8FC79A; }
+.replay .r-du:first-child { margin-top: 0; }
+.replay .r-claude { position: relative; padding-left: 1.5em; }
+.replay .r-claude::before { content: "⏺"; position: absolute; left: 0; color: #E7C37E; }
+.replay .r-claude + .r-claude::before { content: ""; }
+.replay .r-claude b { color: #F3EFE2; }
+.replay .r-schnitt { color: #6E8A76; font-size: 12px; }
+/* Animation nur, wenn replay.js läuft */
+.replay.r-aktiv .r-zeile { opacity: 0; transform: translateY(4px); transition: opacity .35s ease, transform .35s ease; }
+.replay.r-aktiv .r-zeile.r-sichtbar { opacity: 1; transform: none; }
+.replay .r-tippt::after { content: "▍"; color: #E9E4D4; animation: rblink 1s steps(1) infinite; }
+@keyframes rblink { 50% { opacity: 0; } }
+.replay .r-nochmal {
+  position: absolute; right: 12px; bottom: 10px; opacity: 0; pointer-events: none;
+  background: none; border: 1px solid #2F5A3E; color: #8EA394; border-radius: 6px; padding: 3px 9px;
+  font-family: var(--mono); font-size: 11px; cursor: pointer; transition: opacity .3s;
+}
+.replay.r-fertig .r-nochmal { opacity: 1; pointer-events: auto; }
+.replay .r-nochmal:hover { color: #E9E4D4; border-color: #8FC79A; }
+@media (max-width: 560px) { .replay { font-size: 12.5px; } .replay .r-inhalt { padding: 12px 14px 40px; } }
+
+/* ---- Schritt-Nummern in Beitragsüberschriften ---- */
+.beitrag h2 .schritt { font-family: var(--mono); font-size: 14px; font-weight: 700; color: var(--muted); margin-right: 10px; vertical-align: 3px; }
+.replay .r-zeile { max-width: none; }
+
+/* ---- Replay im Stil der Desktop-App (hell, Chat) ---- */
+.replay.desktop { background: #FAF9F5; color: #1F1E1D; border-color: #E4E2DA; border-radius: 14px; font-family: var(--body); font-size: 15px; line-height: 1.6; }
+.replay.desktop .r-kopf { background: #F0EEE6; color: #7A776E; }
+.replay.desktop .r-inhalt { padding: 22px 22px 74px; }
+.replay.desktop .r-du { width: fit-content; max-width: 82%; margin: 4px 0 18px auto; padding: 10px 14px; background: #ECE9DF; border: 0; border-radius: 14px; color: #1F1E1D; }
+.replay.desktop .r-du::before { content: none; }
+.replay.desktop .r-claude { padding-left: 0; font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif; font-size: 16px; color: #1F1E1D; }
+.replay.desktop .r-claude::before { content: none; }
+.replay.desktop .r-du + .r-claude, .replay.desktop .r-du + .r-denkt + .r-claude { padding-top: 26px; }
+.replay.desktop .r-du + .r-claude::after, .replay.desktop .r-du + .r-denkt + .r-claude::after {
+  content: "✳ Claude"; position: absolute; left: 0; top: 0;
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: #B4583A;
+}
+.replay.desktop .r-claude b { color: #000; }
+.replay .r-denkt { margin: 0 0 10px; font-family: var(--mono); font-size: 12px; color: #9A968B; }
+.replay .r-denkt::before { content: "✳ "; color: #B4583A; }
+.replay .r-denkt::after { content: " …"; animation: rblink 1s steps(1) infinite; }
+.replay.desktop .r-inhalt::after {
+  content: "Antworte Claude …"; position: absolute; left: 18px; right: 18px; bottom: 14px;
+  padding: 10px 14px; border: 1px solid #DEDBD0; border-radius: 12px; background: #fff;
+  font-size: 13.5px; color: #A8A498;
+}
+.replay.desktop .r-nochmal { z-index: 1; right: 28px; bottom: 22px; border-color: #DEDBD0; color: #7A776E; background: #fff; }
+.replay.desktop .r-nochmal:hover { color: #1F1E1D; border-color: #B4583A; }
+
+/* ---- Klickpfad (Installation in der App) ---- */
+.klickpfad { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 14px 0 18px; padding: 0; list-style: none; }
+.klickpfad li { display: flex; align-items: center; gap: 8px; }
+.klickpfad li span { padding: 7px 12px; border: 1px solid var(--ink); border-radius: 8px; font-family: var(--mono); font-size: 12.5px; background: #fff; }
+.klickpfad li span.eingabe { background: var(--ink); color: #fff; }
+.klickpfad li + li::before { content: "→"; color: var(--muted); font-family: var(--mono); }
+
+/* ---- Aufklappbare Alternative ---- */
+.beitrag details { margin: 10px 0 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.beitrag summary { cursor: pointer; padding: 12px 0; font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.beitrag summary:hover { color: var(--ink); }
+.beitrag details[open] summary { color: var(--ink); }
