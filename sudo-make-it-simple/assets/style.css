@@ -446,9 +446,9 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .sprachen a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
 .sprachen a:hover { color: var(--ink); }
 
-/* ---- Slider: eine Folie sichtbar, Pfeile und Zähler (slider.js) ---- */
+/* ---- Slider: eine Folie in Spaltenbreite, höchstens so hoch, dass sie samt Zeile darunter auf den Bildschirm passt ---- */
 .slider { margin: 22px 0 28px; }
-.slider-buehne { position: relative; max-width: 440px; margin: 0 auto; }
+.slider-buehne { position: relative; width: min(100%, calc((100vh - 140px) * 0.8)); margin: 0 auto; }
 .slider-spur {
   display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
   border: 1px solid var(--line); border-radius: 12px; scrollbar-width: none;
@@ -457,16 +457,14 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .slider-spur:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
 .slider-spur img { flex: 0 0 100%; width: 100%; height: auto; scroll-snap-align: center; display: block; }
 .slider-pfeil {
-  position: absolute; top: 50%; transform: translateY(-50%); width: 42px; height: 42px; border-radius: 50%;
-  border: 1px solid var(--ink); background: #fff; color: var(--ink); font: 400 22px/1 var(--mono); cursor: pointer;
+  width: 36px; height: 36px; border-radius: 50%; flex: 0 0 auto;
+  border: 1px solid var(--ink); background: #fff; color: var(--ink); font: 400 20px/1 var(--mono); cursor: pointer;
 }
-.slider-pfeil.zurueck { left: -60px; }
-.slider-pfeil.weiter { right: -60px; }
 .slider-pfeil:hover:not(:disabled) { background: var(--ink); color: #fff; }
 .slider-pfeil:disabled { opacity: .25; cursor: default; }
-.slider figcaption { display: flex; justify-content: center; gap: 14px; margin-top: 12px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
-.slider-zaehler { color: var(--ink); }
-.slider figcaption { flex-wrap: wrap; }
-.slider-zaehler { white-space: nowrap; }
-/* Auf dem Handy wird gewischt: keine Pfeile über der Folie */
-@media (max-width: 620px) { .slider-pfeil { display: none; } }
+.slider figcaption {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 12px; margin-top: 12px;
+  font-family: var(--mono); font-size: 12px; color: var(--muted);
+}
+.slider-zaehler { color: var(--ink); white-space: nowrap; }
+.slider-hinweis { flex-basis: 100%; text-align: center; }
