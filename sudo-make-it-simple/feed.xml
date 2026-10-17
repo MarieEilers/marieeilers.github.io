@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
+  <title>sudo make it simple</title>
+  <subtitle>Blog von Marie Christin Eilers über Product Management und KI: Entscheidungen, Werkzeuge, Skills und Plugins.</subtitle>
+  <link href="https://marieeilers.github.io/sudo-make-it-simple/feed.xml" rel="self"/>
+  <link href="https://marieeilers.github.io/sudo-make-it-simple/"/>
+  <id>https://marieeilers.github.io/sudo-make-it-simple/</id>
+  <updated>2026-10-17T00:00:00.000Z</updated>
+  <author><name>sudo make it simple</name></author>
+  <entry>
+    <title>404: Sparringspartner not found</title>
+    <link href="https://marieeilers.github.io/sudo-make-it-simple/beitraege/product-coach/"/>
+    <id>https://marieeilers.github.io/sudo-make-it-simple/beitraege/product-coach/</id>
+    <updated>2026-10-17T00:00:00.000Z</updated>
+    <summary>Also hol dir einen: einen Claude-Skill für permanentes Coaching. Gegenwind statt Schulterklopfen – in ein paar Klicks installiert.</summary>
+  </entry>
+</feed>
