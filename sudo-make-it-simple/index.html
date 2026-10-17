@@ -37,13 +37,75 @@
 <h2>Neu im Backlog</h2>
 
 
-<ol class="liste">
-  <li>
-    <span class="dt">17.10.2026</span>
-    <span class="rb">Skill</span>
-    <span class="tt"><a href="/sudo-make-it-simple/beitraege/product-coach/">404: Sparringspartner not found</a></span>
-  </li>
-</ol>
+<a class="aufmacher" href="/sudo-make-it-simple/beitraege/product-coach/">
+  <span class="auf-bild" aria-hidden="true"><svg viewBox="0 0 680 330" role="img" aria-labelledby="tt-titel">
+  <title id="tt-titel">Anforderungen fliegen wie Tontauben von allen Seiten auf eine Person zu: Export bis März, irgendwas mit KI, Bug in Prod, was bauen wir, Roadmap bis Freitag.</title>
+  <style>
+    .bahn { fill: none; stroke: #B9B9B1; stroke-width: 1.4; stroke-dasharray: 3 6; }
+    .taube { fill: #100F0D; }
+    .ziel { font: 700 13px 'Space Grotesk', sans-serif; fill: #100F0D; }
+    .quelle { font: 400 10px 'Space Mono', monospace; fill: #7A7A72; letter-spacing: .08em; }
+    .figur { fill: none; stroke: #100F0D; stroke-width: 2.4; stroke-linecap: round; }
+    .statisch { display: none; }
+    @media (prefers-reduced-motion: reduce) { .flug { display: none; } .statisch { display: inline; } }
+  </style>
+  <line x1="20" y1="292" x2="660" y2="292" stroke="#E4E4DE" stroke-width="1.5"/>
+  <!-- Flugbahnen: Quelle am Boden → Ziel am Himmel -->
+  <path id="b1" class="bahn" d="M350,292 Q290,110 150,150"/>
+  <path id="b2" class="bahn" d="M440,292 Q470,120 300,105"/>
+  <path id="b3" class="bahn" d="M530,292 Q560,0 330,40"/>
+  <path id="b4" class="bahn" d="M620,292 Q660,90 505,80"/>
+  <path id="b5" class="bahn" d="M620,292 Q600,215 470,200"/>
+  <path id="b6" class="bahn" d="M205,198 Q214,232 226,288"/>
+  <!-- fliegende Tauben -->
+  <g class="flug">
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-3.4s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b1"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-2.9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b2"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-2.3s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b3"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-1.8s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b4"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-1.2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b5"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-3.4s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.45;.75;1" calcMode="spline" keySplines="0 0 1 1;.55 0 1 .45;0 0 1 1"><mpath href="#b6"/></animateMotion></ellipse>
+  </g>
+  <!-- ruhende Tauben, falls Bewegung reduziert ist -->
+  <g class="statisch">
+    <ellipse class="taube" cx="150" cy="150" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="300" cy="105" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="330" cy="40" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="505" cy="80" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="470" cy="200" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="226" cy="288" rx="11" ry="3.5"/>
+  </g>
+  <!-- Ziele -->
+  <text class="ziel" x="150" y="130" text-anchor="middle">Was bauen wir?</text>
+  <text class="ziel" x="300" y="86" text-anchor="middle">Bug in Prod!</text>
+  <text class="ziel" x="330" y="22" text-anchor="middle">Irgendwas mit KI</text>
+  <text class="ziel" x="505" y="61" text-anchor="middle">Export bis März</text>
+  <text class="ziel" x="470" y="181" text-anchor="middle">Nur ein kleines Feature</text>
+  <text class="ziel" x="205" y="186" text-anchor="middle" fill="#7A7A72" style="fill:#7A7A72">Kundenprio #1</text>
+  <!-- Quellen -->
+  <text class="quelle" x="350" y="312" text-anchor="middle">TEAM</text>
+  <text class="quelle" x="440" y="312" text-anchor="middle">KUNDE</text>
+  <text class="quelle" x="530" y="312" text-anchor="middle">MANAGEMENT</text>
+  <text class="quelle" x="620" y="312" text-anchor="middle">VERTRIEB</text>
+  <!-- du -->
+  <g class="figur">
+    <circle cx="70" cy="226" r="9"/>
+    <path d="M70,235 L70,266 M70,266 L58,291 M70,266 L82,291 M70,246 L92,232 M70,250 L96,240 M84,246 L122,212"/>
+  </g>
+  <text class="quelle" x="70" y="312" text-anchor="middle">DU</text>
+</svg>
+</span>
+  <span class="auf-text">
+    <span class="auf-meta"><span class="neu">Neu</span>17.10.2026 · Skill</span>
+    <span class="auf-titel">404: Sparringspartner not found</span>
+    <span class="auf-unter">Also hol dir einen: einen Claude-Skill für permanentes Coaching. Gegenwind statt Schulterklopfen – in ein paar Klicks installiert.</span>
+    <span class="auf-anriss">Product Owner entscheiden allein, und die KI findet jede Idee großartig. Warum ich mir einen Product Coach gebaut habe, der nicht alles abnickt.</span>
+    <span class="auf-cta">Beitrag lesen →</span>
+  </span>
+</a>
+
+
+
 
 
 

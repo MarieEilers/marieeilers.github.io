@@ -387,3 +387,22 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .beitrag summary { cursor: pointer; padding: 12px 0; font-family: var(--mono); font-size: 12px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
 .beitrag summary:hover { color: var(--ink); }
 .beitrag details[open] summary { color: var(--ink); }
+
+/* ---- Aufmacher: neuester Beitrag auf der Startseite ---- */
+.aufmacher {
+  display: block; margin: 14px 0 8px; color: var(--ink);
+  border: 1.5px solid var(--ink); border-radius: 12px; overflow: hidden;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.aufmacher:hover { transform: translateY(-3px); box-shadow: 0 10px 0 -4px var(--line); }
+.auf-bild { display: block; padding: 18px 22px 4px; background: #fff; border-bottom: 1px solid var(--line); }
+.auf-bild svg { display: block; width: 100%; height: auto; }
+.auf-text { display: flex; flex-direction: column; gap: 8px; padding: 20px 24px 22px; }
+.auf-meta { display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.auf-meta .neu { padding: 2px 8px; background: var(--ink); color: #fff; border-radius: 4px; letter-spacing: .1em; }
+.auf-titel { font-family: var(--display); font-size: 32px; line-height: 1.12; font-weight: 700; letter-spacing: -.02em; }
+.auf-unter { font-size: 17px; color: var(--ink); }
+.auf-anriss { font-size: 15px; color: var(--muted); }
+.auf-cta { margin-top: 6px; font-family: var(--mono); font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; }
+.aufmacher:hover .auf-cta { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 560px) { .auf-titel { font-size: 25px; } .auf-text { padding: 16px 18px 18px; } }
