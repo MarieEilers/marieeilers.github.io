@@ -406,3 +406,16 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .auf-cta { margin-top: 6px; font-family: var(--mono); font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; }
 .aufmacher:hover .auf-cta { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 560px) { .auf-titel { font-size: 25px; } .auf-text { padding: 16px 18px 18px; } }
+
+/* ---- Beitragskarten (Liste) ---- */
+.karten { list-style: none; margin: 18px 0 0; padding: 0; display: grid; gap: 14px; }
+.karte {
+  display: flex; flex-direction: column; gap: 6px; padding: 18px 22px 20px; color: var(--ink);
+  border: 1px solid var(--line); border-left: 3px solid var(--ink); border-radius: 10px;
+  transition: border-color .2s ease, transform .2s ease;
+}
+.karte:hover { border-color: var(--ink); transform: translateX(3px); }
+.k-titel { font-family: var(--display); font-size: 22px; font-weight: 700; line-height: 1.2; letter-spacing: -.01em; }
+.k-anriss { font-size: 15px; color: var(--muted); }
+.karte .auf-cta { margin-top: 4px; }
+.karte:hover .auf-cta { text-decoration: underline; text-underline-offset: 3px; }
