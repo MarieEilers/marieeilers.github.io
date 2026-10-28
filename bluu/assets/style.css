@@ -428,6 +428,13 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 .karte:hover .auf-cta { text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---- Startseite: Einleitung als Terminal (Look des GitHub-Profils) ---- */
+/* Startseite: Claim, vier Buchstaben, Vorspann */
+.start-hero { padding: 50px 0 0; }
+.start-h1 { font-size: 52px; line-height: 1.08; letter-spacing: -.025em; margin: 0 0 20px; }
+.start-h1 mark { padding: 0 .06em; }
+.start-vier { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 14px; max-width: none; }
+.start-vier b { color: var(--bluu); font-weight: 700; }
+@media (max-width: 560px) { .start-hero { padding-top: 34px; } .start-h1 { font-size: 36px; } .start-vier { font-size: 11px; } }
 .start-term {
   margin: 34px 0 18px; padding: 20px 24px; border-radius: 12px;
   background: #10201A; color: #E9E4D4; border: 1px solid #24402F;
@@ -435,6 +442,7 @@ html.js .reveal.is-visible { opacity: 1; transform: none; }
 }
 .start-term p { margin: 0; max-width: none; }
 .start-term .p { color: #8FC79A; }
+.start-term .k { color: #8EA394; white-space: nowrap; } /* Kommentar: das Prinzip zur Zeile */
 .start-term .y { color: #E7C37E; }
 .start-term .cur { margin-left: 4px; animation: rblink 1.1s steps(1) infinite; }
 @media (max-width: 560px) { .start-term { font-size: 13px; padding: 16px 18px; } }
