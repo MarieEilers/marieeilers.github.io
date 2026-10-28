@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <title>BLUU</title>
+  <subtitle>BLUU – blog by Marie Christin Eilers on product engineering and AI: build less, learn, unlearn, understand users. With Claude skills that don&#39;t nod along.</subtitle>
+  <link href="https://marieeilers.github.io/bluu/en/feed.xml" rel="self"/>
+  <link href="https://marieeilers.github.io/bluu/en/"/>
+  <id>https://marieeilers.github.io/bluu/en/</id>
+  <updated>2026-10-17T00:00:00.000Z</updated>
+  <author><name>BLUU</name></author>
+  <entry>
+    <title>Product Coach: a Claude skill that pushes back instead of nodding along.</title>
+    <link href="https://marieeilers.github.io/bluu/en/beitraege/product-coach/"/>
+    <id>https://marieeilers.github.io/bluu/en/beitraege/product-coach/</id>
+    <updated>2026-10-17T00:00:00.000Z</updated>
+    <summary>So get one: a Claude skill for permanent coaching. Headwind when you&#39;re off. Tailwind when you&#39;re right. Installed in a few clicks.</summary>
+  </entry>
+</feed>

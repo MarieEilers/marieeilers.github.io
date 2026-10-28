@@ -1,5 +1,5 @@
-/* Feldnotizen — Look „Motion-Kante“, übernommen aus dem Leitfaden für Product Owner.
-   Ein einziges Stylesheet für alle Seiten. Monochrom + ein roter Signatur-Faden.
+/* BLUU — Look „Motion-Kante“, übernommen aus dem Leitfaden für Product Owner.
+   Ein einziges Stylesheet für alle Seiten. Monochrom + Markenfarbe BLUU (Violett-Blau) + Neon als Textmarker.
    Blog-Ergänzungen stehen am Ende unter „Blog“. */
 
 /* Schriften lokal (SIL Open Font License, über @fontsource) – keine Verbindung zu Google Fonts. */
@@ -21,7 +21,9 @@
   --accent:  #141310;   /* Struktur-Akzent: Nummern, aktive Nav — monochrom */
   --accent-deep: #000000;
   --accent-soft: #F3F3EF; /* helle Füllung (Callout, Hinweis) */
-  --faden:   #E5342B;   /* rot — nur die Signatur-Linie */
+  --bluu:    #4B3BFF;   /* Markenfarbe: Icon, Signatur-Linie, Akzente (Kontrast auf Weiß 6,2:1) */
+  --neon:    #B8F34B;   /* Neon: nur als Textmarker hinter dunklem Text oder auf Violett/Schwarz, nie als Schrift auf Weiß */
+  --faden:   var(--bluu); /* Signatur-Linie */
 
   --display: 'Space Grotesk', system-ui, sans-serif;
   --body:    'Inter', system-ui, sans-serif;
@@ -66,7 +68,12 @@ p a:hover, .lede a:hover, .qv a:hover, .beleg-line a:hover { text-decoration-col
   display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
   border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
 }
-.topnav .brand { font-family: var(--display); color: var(--ink); font-weight: 700; font-size: 15.5px; letter-spacing: -.01em; }
+.topnav .brand { font-family: var(--display); color: var(--ink); font-weight: 700; font-size: 15.5px; letter-spacing: .02em; display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.brand-icon { width: 22px; height: 22px; display: block; }
+.brand-claim { font-family: var(--mono); font-weight: 400; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); margin-left: 4px; }
+.topnav .brand:hover .brand-claim { color: var(--bluu); }
+/* Textmarker: die eine Kernaussage eines Absatzes */
+mark, .marker { background: linear-gradient(transparent 52%, var(--neon) 52%, var(--neon) 92%, transparent 92%); color: inherit; padding: 0 .1em; }
 .topnav .brand:hover { color: var(--accent); }
 .navlinks { display: flex; flex-wrap: wrap; gap: 5px 20px; font-family: var(--mono); font-size: 11.5px; text-transform: uppercase; letter-spacing: .03em; }
 .navlinks a { color: var(--muted); }

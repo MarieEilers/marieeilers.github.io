@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLUU</title>
+<meta name="description" content="BLUU – blog by Marie Christin Eilers on product engineering and AI: build less, learn, unlearn, understand users. With Claude skills that don&#39;t nod along.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BLUU">
+<meta property="og:title" content="BLUU">
+<meta property="og:description" content="BLUU – blog by Marie Christin Eilers on product engineering and AI: build less, learn, unlearn, understand users. With Claude skills that don&#39;t nod along.">
+<meta property="og:url" content="https://marieeilers.github.io/bluu/en/">
+<meta property="og:image" content="https://marieeilers.github.io/bluu/assets/og/site-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="en" href="https://marieeilers.github.io/bluu/en/">
+<link rel="alternate" hreflang="de" href="https://marieeilers.github.io/bluu/">
+<script>
+/* Sprache automatisch: Browser auf Deutsch → Deutsch, sonst Englisch. Eine eigene Wahl über DE/EN hat Vorrang. Suchmaschinen werden nicht umgeleitet. */
+(function () {
+  try {
+    if (/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)) return;
+    var wahl = localStorage.getItem("sprache");
+    var browser = ((navigator.languages && navigator.languages[0]) || navigator.language || "de").toLowerCase().indexOf("de") === 0 ? "de" : "en";
+    if ((wahl || browser) !== "en") location.replace("/bluu/");
+  } catch (e) {}
+})();
+</script>
+<link rel="icon" href="/bluu/assets/icon.svg?v=mvs9k4c3" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/bluu/assets/apple-touch-icon.png?v=mvs9k4c3">
+<meta name="theme-color" content="#4B3BFF">
+<link rel="stylesheet" href="/bluu/assets/style.css?v=mvs9k4c3">
+<link rel="alternate" type="application/atom+xml" title="BLUU" href="/bluu/en/feed.xml">
+<meta name="google-site-verification" content="i6QCyJ3cnZQkEDbQEgjYpYasFZPo95wLYsHOFtb3fIc">
+<script data-goatcounter="https://bluu.goatcounter.com/count" async src="/bluu/assets/count.js?v=mvs9k4c3"></script>
+<script>document.documentElement.classList.add('js');</script>
+<script defer src="/bluu/assets/reveal.js?v=mvs9k4c3"></script>
+<script defer src="/bluu/assets/replay.js?v=mvs9k4c3"></script>
+<script defer src="/bluu/assets/slider.js?v=mvs9k4c3"></script>
+</head>
+<body>
+
+<div class="meta">
+  <span>// BLUU</span>
+  <span class="meta-rechts">Product engineering × AI · V0.1
+    <span class="sprachen"><a href="/bluu/" hreflang="de" lang="de" data-sprache="de">DE</a> / <b>EN</b></span>
+  </span>
+</div>
+<nav class="topnav">
+  <a class="brand" href="/bluu/en/"><img class="brand-icon" src="/bluu/assets/icon.svg?v=mvs9k4c3" alt="" width="22" height="22">BLUU<span class="brand-claim">Build less. Understand users.</span></a>
+  <div class="navlinks">
+    <a href="/bluu/en/" class="active">Home</a>
+    <a href="/bluu/en/beitraege/">Posts</a>
+    <a href="/bluu/en/ueber-mich/">About</a>
+  </div>
+</nav>
+
+<main class="wrap">
+<h1 class="nur-vorlesen">BLUU – blog by Marie Christin Eilers on product engineering and AI</h1>
+
+<div class="start-term" role="img" aria-label="Terminal: whoami – Marie Christin Eilers, product engineer, formerly product owner. Why: requirements every second. Advice every minute. Your AI nods along.">
+  <p><span class="p">$</span> whoami</p>
+  <p>Marie Christin Eilers · Product Engineer</p>
+  <p><span class="p">$</span> mv product-owner/ product-engineer/</p>
+  <p><span class="p">$</span> cat why.txt</p>
+  <p class="y">Requirements every second. Advice every minute. Your AI nods along.</p>
+  <p><span class="p">$</span> ls new/<span class="cur" aria-hidden="true">▍</span></p>
+</div>
+
+
+
+
+<a class="aufmacher" href="/bluu/en/beitraege/product-coach/">
+  <span class="auf-bild" aria-hidden="true"><svg viewBox="0 0 680 330" role="img" aria-labelledby="tt-titel-en">
+  <title id="tt-titel-en">Anforderungen fliegen wie Tontauben von allen Seiten auf eine Person zu: Export by March, irgendwas mit KI, Bug in Prod, was bauen wir, Roadmap bis Freitag.</title>
+  <style>
+    .bahn { fill: none; stroke: #B9B9B1; stroke-width: 1.4; stroke-dasharray: 3 6; }
+    .taube { fill: #100F0D; }
+    .ziel { font: 700 13px 'Space Grotesk', sans-serif; fill: #100F0D; }
+    .quelle { font: 400 10px 'Space Mono', monospace; fill: #7A7A72; letter-spacing: .08em; }
+    .figur { fill: none; stroke: #100F0D; stroke-width: 2.4; stroke-linecap: round; }
+    .statisch { display: none; }
+    @media (prefers-reduced-motion: reduce) { .flug { display: none; } .statisch { display: inline; } }
+  </style>
+  <line x1="20" y1="292" x2="660" y2="292" stroke="#E4E4DE" stroke-width="1.5"/>
+  <!-- Flugbahnen: Quelle am Boden → Ziel am Himmel -->
+  <path id="b1" class="bahn" d="M350,292 Q290,110 150,150"/>
+  <path id="b2" class="bahn" d="M440,292 Q470,120 300,105"/>
+  <path id="b3" class="bahn" d="M530,292 Q560,0 330,40"/>
+  <path id="b4" class="bahn" d="M620,292 Q660,90 505,80"/>
+  <path id="b5" class="bahn" d="M620,292 Q600,215 470,200"/>
+  <path id="b6" class="bahn" d="M205,198 Q214,232 226,288"/>
+  <!-- fliegende Tauben -->
+  <g class="flug">
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-3.4s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b1"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-2.9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b2"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-2.3s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b3"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-1.8s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b4"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-1.2s" repeatCount="indefinite" rotate="auto" keyPoints="0;1;1" keyTimes="0;.55;1" calcMode="linear"><mpath href="#b5"/></animateMotion></ellipse>
+    <ellipse class="taube" rx="11" ry="4.5"><animateMotion dur="3.4s" begin="-3.4s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.45;.75;1" calcMode="spline" keySplines="0 0 1 1;.55 0 1 .45;0 0 1 1"><mpath href="#b6"/></animateMotion></ellipse>
+  </g>
+  <!-- ruhende Tauben, falls Bewegung reduziert ist -->
+  <g class="statisch">
+    <ellipse class="taube" cx="150" cy="150" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="300" cy="105" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="330" cy="40" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="505" cy="80" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="470" cy="200" rx="11" ry="4.5"/>
+    <ellipse class="taube" cx="226" cy="288" rx="11" ry="3.5"/>
+  </g>
+  <!-- Ziele -->
+  <text class="ziel" x="150" y="130" text-anchor="middle">What are we building?</text>
+  <text class="ziel" x="300" y="86" text-anchor="middle">Bug in prod!</text>
+  <text class="ziel" x="330" y="22" text-anchor="middle">Something with AI</text>
+  <text class="ziel" x="505" y="61" text-anchor="middle">Export by March</text>
+  <text class="ziel" x="470" y="181" text-anchor="middle">Just a small feature</text>
+  <text class="ziel" x="205" y="186" text-anchor="middle" fill="#7A7A72" style="fill:#7A7A72">Customer priority #1</text>
+  <!-- Quellen -->
+  <text class="quelle" x="350" y="312" text-anchor="middle">TEAM</text>
+  <text class="quelle" x="440" y="312" text-anchor="middle">CUSTOMER</text>
+  <text class="quelle" x="530" y="312" text-anchor="middle">MANAGEMENT</text>
+  <text class="quelle" x="620" y="312" text-anchor="middle">SALES</text>
+  <!-- du -->
+  <g class="figur">
+    <circle cx="70" cy="226" r="9"/>
+    <path d="M70,235 L70,266 M70,266 L58,291 M70,266 L82,291 M70,246 L92,232 M70,250 L96,240 M84,246 L122,212"/>
+  </g>
+  <text class="quelle" x="70" y="312" text-anchor="middle">YOU</text>
+</svg>
+</span>
+  <span class="auf-text">
+    <span class="auf-meta"><span class="neu">New</span>17/10/2026 · Skill</span>
+    <span class="auf-titel">Product Coach: a Claude skill that pushes back instead of nodding along.</span>
+    <span class="auf-unter">So get one: a Claude skill for permanent coaching. Headwind when you&#39;re off. Tailwind when you&#39;re right. Installed in a few clicks.</span>
+    <span class="auf-anriss">Product owners are often alone in their role – and under pressure from every role around them. And your AI thinks every idea is brilliant. Why I built a product coach that doesn&#39;t nod along.</span>
+    <span class="auf-cta">Read the post →</span>
+  </span>
+</a>
+
+
+
+
+
+
+</main>
+
+<footer class="fuss">
+  <span>// Marie Christin Eilers</span>
+  <span class="fuss-links"><a href="https://marie-christin-eilers.carrd.co/">Website</a><a href="https://www.linkedin.com/in/marieeilers/">LinkedIn</a><a href="https://www.xing.com/profile/MarieChristin_Eilers">XING</a><a href="https://github.com/MarieEilers">GitHub</a></span>
+  <span class="fuss-links"><a href="/bluu/en/impressum/">Legal notice</a><a href="/bluu/en/datenschutz/">Privacy</a></span>
+</footer>
+
+<script>
+/* Wer über DE/EN umschaltet, behält diese Sprache. */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("[data-sprache]");
+  if (a) { try { localStorage.setItem("sprache", a.getAttribute("data-sprache")); } catch (err) {} }
+});
+</script>
+</body>
+</html>

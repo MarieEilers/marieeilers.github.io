@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="de">
-  <title>sudo make it simple</title>
-  <subtitle>Blog von Marie Christin Eilers über Product Management und KI – weniger Roadmap-Theater, mehr Wirkung. Mit Skills für Claude, die nicht alles abnicken.</subtitle>
-  <link href="https://marieeilers.github.io/sudo-make-it-simple/feed.xml" rel="self"/>
-  <link href="https://marieeilers.github.io/sudo-make-it-simple/"/>
-  <id>https://marieeilers.github.io/sudo-make-it-simple/</id>
+  <title>BLUU</title>
+  <subtitle>BLUU – Blog von Marie Christin Eilers über Product Engineering und KI: weniger bauen, lernen, verlernen, Nutzer verstehen. Mit Skills für Claude, die nicht alles abnicken.</subtitle>
+  <link href="https://marieeilers.github.io/bluu/feed.xml" rel="self"/>
+  <link href="https://marieeilers.github.io/bluu/"/>
+  <id>https://marieeilers.github.io/bluu/</id>
   <updated>2026-10-17T00:00:00.000Z</updated>
-  <author><name>sudo make it simple</name></author>
+  <author><name>BLUU</name></author>
   <entry>
-    <title>404: Sparringspartner not found</title>
-    <link href="https://marieeilers.github.io/sudo-make-it-simple/beitraege/product-coach/"/>
-    <id>https://marieeilers.github.io/sudo-make-it-simple/beitraege/product-coach/</id>
+    <title>Product Coach: ein Claude-Skill, der widerspricht statt abzunicken.</title>
+    <link href="https://marieeilers.github.io/bluu/beitraege/product-coach/"/>
+    <id>https://marieeilers.github.io/bluu/beitraege/product-coach/</id>
     <updated>2026-10-17T00:00:00.000Z</updated>
     <summary>Also hol dir einen: einen Claude-Skill für permanentes Coaching. Gegenwind, wenn du danebenliegst. Rückenwind, wenn du recht hast. In ein paar Klicks installiert.</summary>
   </entry>

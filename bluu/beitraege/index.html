@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beiträge · BLUU</title>
+<meta name="description" content="BLUU – Blog von Marie Christin Eilers über Product Engineering und KI: weniger bauen, lernen, verlernen, Nutzer verstehen. Mit Skills für Claude, die nicht alles abnicken.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BLUU">
+<meta property="og:title" content="Beiträge">
+<meta property="og:description" content="BLUU – Blog von Marie Christin Eilers über Product Engineering und KI: weniger bauen, lernen, verlernen, Nutzer verstehen. Mit Skills für Claude, die nicht alles abnicken.">
+<meta property="og:url" content="https://marieeilers.github.io/bluu/beitraege/">
+<meta property="og:image" content="https://marieeilers.github.io/bluu/assets/og/site-de.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="de" href="https://marieeilers.github.io/bluu/beitraege/">
+<link rel="alternate" hreflang="en" href="https://marieeilers.github.io/bluu/en/beitraege/">
+<script>
+/* Sprache automatisch: Browser auf Deutsch → Deutsch, sonst Englisch. Eine eigene Wahl über DE/EN hat Vorrang. Suchmaschinen werden nicht umgeleitet. */
+(function () {
+  try {
+    if (/bot|crawl|spider|slurp|lighthouse|preview/i.test(navigator.userAgent)) return;
+    var wahl = localStorage.getItem("sprache");
+    var browser = ((navigator.languages && navigator.languages[0]) || navigator.language || "de").toLowerCase().indexOf("de") === 0 ? "de" : "en";
+    if ((wahl || browser) !== "de") location.replace("/bluu/en/beitraege/");
+  } catch (e) {}
+})();
+</script>
+<link rel="icon" href="/bluu/assets/icon.svg?v=mvs9k4c3" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/bluu/assets/apple-touch-icon.png?v=mvs9k4c3">
+<meta name="theme-color" content="#4B3BFF">
+<link rel="stylesheet" href="/bluu/assets/style.css?v=mvs9k4c3">
+<link rel="alternate" type="application/atom+xml" title="BLUU" href="/bluu/feed.xml">
+<meta name="google-site-verification" content="i6QCyJ3cnZQkEDbQEgjYpYasFZPo95wLYsHOFtb3fIc">
+<script data-goatcounter="https://bluu.goatcounter.com/count" async src="/bluu/assets/count.js?v=mvs9k4c3"></script>
+<script>document.documentElement.classList.add('js');</script>
+<script defer src="/bluu/assets/reveal.js?v=mvs9k4c3"></script>
+<script defer src="/bluu/assets/replay.js?v=mvs9k4c3"></script>
+<script defer src="/bluu/assets/slider.js?v=mvs9k4c3"></script>
+</head>
+<body>
+
+<div class="meta">
+  <span>// BLUU</span>
+  <span class="meta-rechts">Product Engineering × KI · V0.1
+    <span class="sprachen"><b>DE</b> / <a href="/bluu/en/beitraege/" hreflang="en" lang="en" data-sprache="en">EN</a></span>
+  </span>
+</div>
+<nav class="topnav">
+  <a class="brand" href="/bluu/"><img class="brand-icon" src="/bluu/assets/icon.svg?v=mvs9k4c3" alt="" width="22" height="22">BLUU<span class="brand-claim">Build less. Understand users.</span></a>
+  <div class="navlinks">
+    <a href="/bluu/">Start</a>
+    <a href="/bluu/beitraege/" class="active">Beiträge</a>
+    <a href="/bluu/ueber-mich/">Über mich</a>
+  </div>
+</nav>
+
+<main class="wrap">
+<div class="head">
+  <p class="eyebrow">Alle Beiträge</p>
+  <h1>Beiträge</h1>
+</div>
+
+
+
+<ol class="karten">
+  <li>
+    <a class="karte" href="/bluu/beitraege/product-coach/">
+      <span class="auf-meta">17.10.2026 · Skill</span>
+      <span class="k-titel">Product Coach: ein Claude-Skill, der widerspricht statt abzunicken.</span>
+      <span class="k-anriss">Also hol dir einen: einen Claude-Skill für permanentes Coaching. Gegenwind, wenn du danebenliegst. Rückenwind, wenn du recht hast. In ein paar Klicks installiert.</span>
+      <span class="auf-cta">Lesen →</span>
+    </a>
+  </li>
+</ol>
+
+
+</main>
+
+<footer class="fuss">
+  <span>// Marie Christin Eilers</span>
+  <span class="fuss-links"><a href="https://marie-christin-eilers.carrd.co/">Website</a><a href="https://www.linkedin.com/in/marieeilers/">LinkedIn</a><a href="https://www.xing.com/profile/MarieChristin_Eilers">XING</a><a href="https://github.com/MarieEilers">GitHub</a></span>
+  <span class="fuss-links"><a href="/bluu/impressum/">Impressum</a><a href="/bluu/datenschutz/">Datenschutz</a></span>
+</footer>
+
+<script>
+/* Wer über DE/EN umschaltet, behält diese Sprache. */
+document.addEventListener("click", function (e) {
+  var a = e.target.closest && e.target.closest("[data-sprache]");
+  if (a) { try { localStorage.setItem("sprache", a.getAttribute("data-sprache")); } catch (err) {} }
+});
+</script>
+</body>
+</html>
